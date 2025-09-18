@@ -1,35 +1,24 @@
 #include <stdio.h>
 
-#define MAX_LENGTH 100
+int main() {
 
-int main(void) {
-    char name[MAX_LENGTH];
+    printf("My name: John Doe\n");
+    printf("My age: 25\n");
+    printf("My favorite hobby: Programming\n\n");
+    
+
+    char name[50];
     int age;
-    char hobby[MAX_LENGTH];
-
-    // Prompt user for details
-    printf("Please provide the following information:\n");
-
-    printf("\tEnter your name: ");
-    fgets(name, sizeof(name), stdin);
-    name[strcspn(name, "\n")] = 0; // Remove trailing newline
-
-    printf("\tEnter your age: ");
+    
+    printf("Please enter your name: ");
+    scanf("%49s", name); 
+    
+    printf("Please enter your age: ");
     scanf("%d", &age);
-    getchar(); // Clear newline from input buffer
-
-    printf("\tEnter your favorite hobby: ");
-    fgets(hobby, sizeof(hobby), stdin);
-    hobby[strcspn(hobby, "\n")] = 0; // Remove trailing newline
-
-    // Display user's info
-    printf("\n### Your Information ###\n");
-    printf("Name     : %s\n", name);
-    printf("Age      : %d years old\n", age);
-    printf("Hobby    : %s\n", hobby);
-
-    // Greeting message
-    printf("\nGreeting: Hello, %s! You are %d years old and love %s.\n", name, age, hobby);
-
+    
+    printf("\nHello %s! ", name);
+    printf("You are %d years old. ", age);
+    printf("Welcome to C programming!\n");
+    
     return 0;
 }
